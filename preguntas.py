@@ -14,14 +14,14 @@ def pregunta_01():
     En este punto se realiza la lectura de conjuntos de datos.
     Complete el código presentado a continuación.
     """
-    import pandas as pd
+
     # Lea el archivo `gm_2008_region.csv` y asignelo al DataFrame `df`
     df = pd.read_csv("gm_2008_region.csv",sep=",")
 
     # Asigne la columna "life" a `y` y la columna "fertility" a `X`
     y = df["life"].values
     X = df["fertility"].values
-    y
+    
     # Imprima las dimensiones de `y`
     print(np.shape(y))
 
@@ -46,24 +46,24 @@ def pregunta_02():
     En este punto se realiza la impresión de algunas estadísticas básicas
     Complete el código presentado a continuación.
     """
-
+    import pandas as pd
     # Lea el archivo `gm_2008_region.csv` y asignelo al DataFrame `df`
-    df = ____
+    df = pd.read_csv("gm_2008_region.csv",sep=",")
 
     # Imprima las dimensiones del DataFrame
-    print(____.____)
+    print(np.shape(df))
 
     # Imprima la correlación entre las columnas `life` y `fertility` con 4 decimales.
-    print(____)
+    print("{0:.4f}".format(np.corrcoef(df["life"],df["fertility"])[0,1]))
 
     # Imprima la media de la columna `life` con 4 decimales.
-    print(____)
+    print("{0:.4f}".format(df["life"].mean()))
 
     # Imprima el tipo de dato de la columna `fertility`.
-    print(____)
+    print(type(df["fertility"]))
 
     # Imprima la correlación entre las columnas `GDP` y `life` con 4 decimales.
-    print(____)
+    print("{0:.4f}".format(np.corrcoef(df["life"],df["GDP"])[0,1]))
 
 
 def pregunta_03():
